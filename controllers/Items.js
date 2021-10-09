@@ -2,12 +2,7 @@ import { ItemModel } from "../models/ItemModel.js";
 
 export const getItems = async (req, res) => {
     try {
-        const item = new ItemModel({
-            title: 'test',
-            content: 'asdasdasd'
-        });
-        item.save();
-    
+          
         const items = await ItemModel.find();
         res.status(200).json(items);
     } catch (err) {
